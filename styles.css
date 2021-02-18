@@ -13,11 +13,17 @@
     box-sizing: border-box;
 }
 
+html {
+    height: 100%;
+  }
+
 body {
-    width: 100vw;
-    height: 100vh;
-    background: var(--blue);
-    background: linear-gradient(to right top, var(--red), var(--darkRed));
+    height: 100%;
+    background-image: linear-gradient(to right top, var(--red), var(--darkRed));
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 header {
