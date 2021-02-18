@@ -43,14 +43,14 @@ function resetTimer() {
 function changeBackgroundColor(mode) {
     switch (mode) {
         case 25:
-            document.body.style.background = 'linear-gradient(to right top, var(--red), var(--darkRed))';
+            document.body.style.backgroundImage = 'linear-gradient(to right top, var(--red), var(--darkRed))';
             document.getElementById("startButton").style.color = "var(--darkRed)";
             document.getElementById("resetButton").style.color = "var(--darkRed)";
             resetButtonClass();
             document.getElementById("btn-work").className = "button0";
             break;
         case 5:
-            document.body.style.background = 'linear-gradient(to right top, var(--blue), var(--darkBlue))';
+            document.body.style.backgroundImage = 'linear-gradient(to right top, var(--blue), var(--darkBlue))';
             document.getElementById("startButton").style.color = "var(--darkBlue)";
             document.getElementById("resetButton").style.color = "var(--darkBlue)";
             resetButtonClass();
@@ -58,7 +58,7 @@ function changeBackgroundColor(mode) {
 
             break;
         case 15:
-            document.body.style.background = 'linear-gradient(to right top, var(--green), var(--darkGreen))';
+            document.body.style.backgroundImage = 'linear-gradient(to right top, var(--green), var(--darkGreen))';
             document.getElementById("startButton").style.color = "var(--darkGreen)";
             document.getElementById("resetButton").style.color = "var(--darkGreen)";
             resetButtonClass();
