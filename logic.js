@@ -3,6 +3,9 @@ let startTime = 25;
 let time = startTime * 60;
 let timer;
 
+let clickSound = new Audio("sounds/click.wav");
+let endTimeSound = new Audio("sounds/endtime.wav");
+
 function changeTimeValue(remainingTime) {
     document.getElementById('countdown').innerHTML = `${remainingTime}:00`;
     startTime = remainingTime;
@@ -24,8 +27,10 @@ function updateCountdown() {
         seconds = seconds < 10 ? '0' + seconds : seconds;
         countdownEl.innerHTML = `${minutes}:${seconds}`;
     }
-    else
+    else{
+        endTimeSound.play();
         resetTimer();
+    }
 }
 
 function stopTimer() {
@@ -71,4 +76,8 @@ function resetButtonClass() {
     document.getElementById("btn-work").className = "button1";
     document.getElementById("btn-short").className = "button1";
     document.getElementById("btn-long").className = "button1";
+}
+
+function playClickSound(){
+    clickSound.play();
 }

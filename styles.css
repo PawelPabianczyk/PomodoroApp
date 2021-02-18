@@ -37,8 +37,8 @@ header {
 
 .container {
     margin: auto;
-    /* width: 40%; */
-    width: 360px;
+    width: 35%;
+    /* width: 360px; */
     background: linear-gradient(to right top, rgb(255, 255, 255, 0.20), rgb(255, 255, 255, 0.25));
     border-radius: 20px;
     overflow: hidden;
