@@ -16,14 +16,14 @@ function startTimer() {
 }
 
 function updateCountdown() {
-    let minutes = Math.floor(time / 60);
-    let seconds = time % 60;
-
-    seconds = seconds < 10 ? '0' + seconds : seconds;
-    countdownEl.innerHTML = `${minutes}:${seconds}`;
-
-    if (time > 0)
+    if (time > 0){
         time--;
+        let minutes = Math.floor(time / 60);
+        let seconds = time % 60;
+    
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+        countdownEl.innerHTML = `${minutes}:${seconds}`;
+    }
     else
         resetTimer();
 }
