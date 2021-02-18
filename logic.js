@@ -2,35 +2,64 @@ let countdownEl = document.getElementById('countdown');
 let startTime = 25;
 let time = startTime * 60;
 let timer;
+let workCounter = 0;
 
 let clickSound = new Audio("sounds/click.wav");
 let endTimeSound = new Audio("sounds/endtime.wav");
 
 function changeTimeValue(remainingTime) {
+    stopTimer();
     document.getElementById('countdown').innerHTML = `${remainingTime}:00`;
     startTime = remainingTime;
     time = remainingTime * 60;
+}
+
+function updateCountdown() {
+    if (time > 0) {
+        time--;
+        let minutes = Math.floor(time / 60);
+        let seconds = time % 60;
+
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+        countdownEl.innerHTML = `${minutes}:${seconds}`;
+    }
+    else {
+        endTimeSound.play();
+        resetTimer();
+        countWorkIterations();
+    }
+}
+
+function countWorkIterations() {
+    if (startTime == 25)
+        workCounter++;
+    else if (startTime == 15)
+        workCounter = 0;
+
+    if (workCounter < 4) {
+        switch (startTime) {
+            case 25:
+                changeTimeValue(5);
+                changeBackgroundColor(5);
+                break;
+            case 5:
+            case 15:
+                changeTimeValue(25);
+                changeBackgroundColor(25);
+                break;
+        }
+    }
+    else {
+        workCounter = 0;
+        changeTimeValue(15);
+        changeBackgroundColor(15);
+    }
 }
 
 function startTimer() {
     timer = setInterval(updateCountdown, 1000);
     document.getElementById("startButton").onclick = stopTimer;
     document.getElementById('startButton').innerHTML = 'Stop';
-}
-
-function updateCountdown() {
-    if (time > 0){
-        time--;
-        let minutes = Math.floor(time / 60);
-        let seconds = time % 60;
-    
-        seconds = seconds < 10 ? '0' + seconds : seconds;
-        countdownEl.innerHTML = `${minutes}:${seconds}`;
-    }
-    else{
-        endTimeSound.play();
-        resetTimer();
-    }
 }
 
 function stopTimer() {
@@ -78,6 +107,6 @@ function resetButtonClass() {
     document.getElementById("btn-long").className = "button1";
 }
 
-function playClickSound(){
+function playClickSound() {
     clickSound.play();
 }
