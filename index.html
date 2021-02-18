@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <title>PomodoroApp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Simple web app which can help with time managing">
+</head>
+
+<body>
+    <header>PomodoroApp</header>
+    <section>
+        <div class="container">
+            <div class="btn-group">
+                <button id="btn-work" class="button button0" onclick="changeTimeValue(25);changeBackgroundColor(25)">Work</button>
+                <button id="btn-short" class="button button1" onclick="changeTimeValue(5);changeBackgroundColor(5)">Short
+                    Break</button>
+                <button id="btn-long" class="button button1" onclick="changeTimeValue(15); changeBackgroundColor(15)">Long Break
+                </button>
+            </div>
+            <div id="countdown">
+                25:00
+            </div>
+            <script src="logic.js"></script>
+            <div class="btn-group">
+                <button class="button button2" onclick="startTimer()" id="startButton">Start</button>
+                <button class="button button2" onclick="resetTimer()" id="resetButton">Reset</button>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
