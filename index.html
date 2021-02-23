@@ -16,12 +16,12 @@
         <div class="container">
             <div class="btn-group">
                 <button id="btn-work" class="button button0"
-                    onclick="changeTimeValue(25);changeBackgroundColor(25)">Work</button>
+                    onclick="changeTimeValue(25)">Work</button>
                 <button id="btn-short" class="button button1"
-                    onclick="changeTimeValue(5);changeBackgroundColor(5)">Short
+                    onclick="changeTimeValue(5)">Short
                     Break</button>
                 <button id="btn-long" class="button button1"
-                    onclick="changeTimeValue(15); changeBackgroundColor(15)">Long Break
+                    onclick="changeTimeValue(15)">Long Break
                 </button>
             </div>
             <div id="countdown">
@@ -30,7 +30,7 @@
             <script src="logic.js"></script>
             <div class="btn-group">
                 <button class="button button2" onclick="startTimer();playClickSound()" id="startButton">Start</button>
-                <button class="button button2" onclick="resetTimer();playClickSound()" id="resetButton">Reset</button>
+                <button class="button button2" onclick="editTimer();playClickSound()" id="resetButton">Edit</button>
             </div>
         </div>
     </section>

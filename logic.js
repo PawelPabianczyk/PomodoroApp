@@ -18,6 +18,7 @@ function changeTimeValue(remainingTime) {
     document.getElementById("countdown").innerHTML = `${remainingTime}:00`;
     startTime = remainingTime;
     time = remainingTime * 60;
+    changeBackgroundColor(startTime);
   } else {
     time = time - Math.floor((performance.now() - beforeStop) / 1000)
   }
@@ -65,6 +66,9 @@ function startTimer() {
   timer = setInterval(updateCountdown, 1000);
   document.getElementById("startButton").onclick = stopTimer;
   document.getElementById("startButton").innerHTML = "Stop";
+
+  document.getElementById("resetButton").onclick = resetTimer;
+  document.getElementById("resetButton").innerHTML = "Reset";
   isTimerRunning = true;
 }
 
@@ -79,6 +83,9 @@ function resetTimer() {
   clearInterval(timer);
   stopTimer();
   changeTimeValue(startTime);
+
+  document.getElementById("resetButton").onclick = editTimer;
+  document.getElementById("resetButton").innerHTML = "Edit";
 }
 
 function changeBackgroundColor(mode) {
@@ -119,4 +126,9 @@ function resetButtonClass() {
 
 function playClickSound() {
   clickSound.play();
+  clickSound.loop = false;
+}
+
+function editTimer(){
+    console.log("edytowanie");
 }
