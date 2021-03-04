@@ -12,4 +12,4 @@ Email - pawel.pabianczyk1999@gmail.com
 
 LinkedIn - [Pawel Pabianczyk](https://www.linkedin.com/in/pawel-pabianczyk/)
 
-Project Link: [https://github.com/PawelPabianczyk/my-page](https://github.com/PawelPabianczyk/PomodoroApp)
+Project Link: [https://github.com/PawelPabianczyk/PomodoroApp](https://github.com/PawelPabianczyk/PomodoroApp)
